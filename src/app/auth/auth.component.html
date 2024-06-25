@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 offset-md-3">
+      <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
+      <div *ngIf="isLoading" class="text-center mt-3">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+            placeholder="jean@gmail.com"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            ngModel
+            name="password"
+            required
+            minlength="6"
+            placeholder="6 caractères au minimum"
+          />
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <button class="btn btn-success  btn-lg" [disabled]="!authForm.valid">
+            {{ isLoginMode ? "Connexion" : "Inscription" }}
+          </button>
+          <p *ngIf="isLoginMode" class="mt-4" (click)="onSwitchMode()">Vous n'avez pas encore de compte ? <a class="link-style ">Cliquer ici</a></p>
+          <p *ngIf="!isLoginMode" class="mt-4" (click)="onSwitchMode()">Vous avez déjà un compte ? <a class="link-style ">Cliquer ici</a></p>
+
+          <!-- <button class="btn btn-primary  btn-lg" type="button" (click)="onSwitchMode()">
+           {{ isLoginMode ? "S'inscrire ici" : "Connexion" }}
+          </button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

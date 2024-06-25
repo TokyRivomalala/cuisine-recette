@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">Recettes de Cuisine</a>
+
+  <form class="form-inline my-2 my-lg-0 mt-3">
+    <input
+      class="form-control mr-sm-2 btn-lg"
+      type="search"
+      placeholder="Rechercher par nom"
+      aria-label="Search"
+      [(ngModel)]="searchTerm"
+      name="searchTerm"
+      (input)="onSearch()"
+    />
+    <button
+      class="btn btn-outline-success my-2 my-sm-0 btn-lg"
+      type="button"
+      (click)="onSearch()"
+    >
+      Rechercher
+    </button>
+  </form> 
+
+  <div class="ml-auto">
+    <button class="btn btn-link text-white btn-lg" (click)="sortRecipes('asc')">
+      Tri croissant
+    </button>
+    <button class="btn btn-link text-white btn-lg" (click)="sortRecipes('desc')">
+      Tri décroissant
+    </button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div
+      class="col-md-4 mb-4"
+      *ngFor="let recipe of pagedRecipes; let i = index"
+    >
+      <app-recipe-item [recipe]="recipe" [index]="i"></app-recipe-item>
+    </div>
+  </div>
+
+  <mat-paginator
+    *ngIf="pagedRecipes"
+    [length]="pagedRecipes.length"
+    [pageSize]="6"
+    [pageSizeOptions]="[6, 9]"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</div>
+
+<!-- <div class="row">
+  <div class="col-xs-12">
+    <button
+    (click)="onNewRecipe()"
+    class="btn btn-success">New Recipe</button>
+  </div>
+</div>
+<hr /> -->

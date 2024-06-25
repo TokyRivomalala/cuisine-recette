@@ -1,0 +1,26 @@
+input.ng-invalid.ng-touched ,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.navbar-brand {
+  height: 25px;
+}
+
+label {
+  font-size: 13px;
+}
+
+.form-control {
+  font-size: 13px;
+}
+
+.ingredient {
+  font-size: 13px;
+}
+
+.rounded-circle {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}

@@ -1,0 +1,42 @@
+a {
+  color: inherit; /* Utilise la couleur par défaut du texte */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+}
+
+a:hover {
+  color: inherit; /* Utilise la couleur par défaut du texte au survol */
+  text-decoration: none; /* Supprime le soulignement au survol */
+}
+
+h5 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 13px;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 250px; /* Ajustez la hauteur maximale selon vos besoins */
+  object-fit: cover;
+}
+
+.card-title {
+  height: 30px;
+}
+
+.card-text {
+  min-height: 60px;
+}
+
+

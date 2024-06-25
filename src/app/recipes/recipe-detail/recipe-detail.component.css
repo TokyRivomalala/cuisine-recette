@@ -1,0 +1,33 @@
+.navbar-brand {
+  height: 25px;
+}
+
+.circular-badge {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredient {
+  font-size: 14px;
+}
+
+.liste-ingredient {
+  font-size: 12px;
+}
+
+.quantite-ingredient {
+  font-size: 11px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+p {
+  font-size: 13px;
+  text-align: justify;  
+}

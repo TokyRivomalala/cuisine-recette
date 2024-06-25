@@ -1,0 +1,20 @@
+.recipe-card {
+  margin-bottom: 30px;
+}
+.recipe-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.navbar-brand {
+  height: 25px;
+}
+
+/* Style pour le bouton recherche */
+.btn-outline-success:focus,
+.btn-outline-success.focus {
+  color: #fff; /* Couleur du texte */
+  background-color: #28a745; /* Couleur de fond */
+  border-color: #28a745; /* Couleur de la bordure */
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); /* Ombre au survol */
+}

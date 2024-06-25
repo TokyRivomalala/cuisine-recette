@@ -1,0 +1,73 @@
+<!-- 
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      style="max-height: 100px"
+      class="img-responsive"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ recipe.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown>
+      <button class="btn btn-primary dropdown-toggle">
+        Manage Recipe <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a style="cursor: pointer">To Shopping List</a>
+        </li>
+        <li><a (click)="editRecipe()" style="cursor: pointer">Edit Recipe</a></li>
+        <li><a style="cursor: pointer" (click)="onDeleteRecipe()">Delete Recipe</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">{{ recipe.description }}</div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="card">
+  <img
+    [src]="recipe.imagePath"
+    alt="{{ recipe.name }}"
+    class="card-img-top recipe-image"
+    style="max-height: 500px"
+  />
+  <div class="card-body ">
+    <h1 class="card-title pr-4 pl-4 pt-4 ">{{ recipe.name }}</h1>
+
+    <p class="card-text mt-4 pr-4 pl-4">{{ recipe.description }}</p>
+    <ul class="list-group pr-3 pl-3">
+      <li class="list-group-item list-group-item-info font-weight-bold ingredient mt-4" >Ingrédients</li>
+      <li class="list-group-item liste-ingredient" *ngFor="let ingredient of recipe.ingredients" >
+        <span class="badge badge-pill badge-secondary mr-2 circular-badge quantite-ingredient">{{ ingredient.amount }}</span> {{ ingredient.name }}
+      </li>
+    </ul>
+
+    <div class="mt-4">
+      <button class="btn btn-success btn-lg mr-2" (click)="editRecipe()">
+        Modifier
+      </button>
+      <button class="btn btn-danger btn-lg" (click)="onDeleteRecipe()">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>
